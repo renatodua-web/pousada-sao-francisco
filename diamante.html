@@ -964,7 +964,246 @@
     color: rgba(255,255,255,0.35);
   }
 </style>
+<style>
+  .galeria-section {
+    padding: 80px 24px;
+    background: var(--cream);
+  }
+  .galeria-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 32px 0 28px;
+    flex-wrap: wrap;
+  }
+  .galeria-btn {
+    padding: 12px 32px;
+    border: 1.5px solid var(--terracota);
+    background: transparent;
+    color: var(--terracota);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .galeria-btn:hover { background: var(--terracota-pale); }
+  .galeria-btn.ativo {
+    background: var(--terracota-dark);
+    border-color: var(--terracota-dark);
+    color: white;
+  }
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .galeria-item {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    background: var(--terracota-pale);
+  }
+  .galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .galeria-item:hover img { transform: scale(1.06); }
+  .galeria-item .foto-legenda {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(42,26,14,0.75));
+    color: white;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 20px 10px 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .galeria-item:hover .foto-legenda { opacity: 1; }
+  .galeria-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--terracota-pale);
+    opacity: 0.5;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--terracota-dark);
+    text-transform: uppercase;
+  }
+  .galeria-hidden { display: none; }
+  .lb-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(42,26,14,0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .lb-overlay.aberto { display: flex; }
+  .lb-overlay img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 2px;
+  }
+  .lb-fechar {
+    position: absolute;
+    top: 20px; right: 24px;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+    opacity: 0.7;
+  }
+  .lb-fechar:hover { opacity: 1; }
+  .lb-legenda {
+    position: absolute;
+    bottom: 24px;
+    left: 0; right: 0;
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+  @media (max-width: 480px) {
+    .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
 
+<section class="galeria-section reveal">
+  <p class="section-label">Galeria</p>
+  <h2 class="section-title">Conheça a <em>Pousada</em></h2>
+  <div class="divider-gold"></div>
+  <div class="galeria-btns">
+    <button class="galeria-btn ativo" onclick="galeriamostrar('pousada', this)">Fotos da Pousada</button>
+    <button class="galeria-btn" onclick="galeriamostrar('regiao', this)">Fotos da Região</button>
+  </div>
+
+  <div id="galeria-pousada" class="galeria-grid">
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE.jpg','Pousada Diamante')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE.jpg" alt="Pousada Diamante" loading="lazy">
+      <div class="foto-legenda">Pousada Diamante</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE1.jpg','Vista 1')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE1.jpg" alt="Vista 1" loading="lazy">
+      <div class="foto-legenda">Vista 1</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE2.jpg','Vista 2')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE2.jpg" alt="Vista 2" loading="lazy">
+      <div class="foto-legenda">Vista 2</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE3.jpg','Vista 3')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE3.jpg" alt="Vista 3" loading="lazy">
+      <div class="foto-legenda">Vista 3</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE4.jpg','Vista 4')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE4.jpg" alt="Vista 4" loading="lazy">
+      <div class="foto-legenda">Vista 4</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE5.jpg','Vista 5')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE5.jpg" alt="Vista 5" loading="lazy">
+      <div class="foto-legenda">Vista 5</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE6.jpg','Vista 6')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE6.jpg" alt="Vista 6" loading="lazy">
+      <div class="foto-legenda">Vista 6</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE7.jpg','Vista 7')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/DIAMANTE7.jpg" alt="Vista 7" loading="lazy">
+      <div class="foto-legenda">Vista 7</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/FACHADA%20DIAMANTE.png','Fachada')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/FACHADA%20DIAMANTE.png" alt="Fachada" loading="lazy">
+      <div class="foto-legenda">Fachada</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/FACHADA%20ILUMINADA.jpg','Fachada Iluminada')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/FACHADA%20ILUMINADA.jpg" alt="Fachada Iluminada" loading="lazy">
+      <div class="foto-legenda">Fachada Iluminada</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/FACHADAS%20TORRES.png','Torres')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/FACHADAS%20TORRES.png" alt="Torres" loading="lazy">
+      <div class="foto-legenda">Torres</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/CAMA%20FRONTAL.png','Quarto — Cama')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/CAMA%20FRONTAL.png" alt="Quarto — Cama" loading="lazy">
+      <div class="foto-legenda">Quarto — Cama</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/CAMA%20LATERAL.png','Quarto — Vista Lateral')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/CAMA%20LATERAL.png" alt="Quarto — Vista Lateral" loading="lazy">
+      <div class="foto-legenda">Quarto — Vista Lateral</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/BANHEIRO%20DIAMANTE.png','Banheiro')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/BANHEIRO%20DIAMANTE.png" alt="Banheiro" loading="lazy">
+      <div class="foto-legenda">Banheiro</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/CHUVEIRO%20DIAMANTE.png','Chuveiro')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/CHUVEIRO%20DIAMANTE.png" alt="Chuveiro" loading="lazy">
+      <div class="foto-legenda">Chuveiro</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/PIA%20BANHEIRO%20DIAMANTE.png','Pia do Banheiro')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/PIA%20BANHEIRO%20DIAMANTE.png" alt="Pia do Banheiro" loading="lazy">
+      <div class="foto-legenda">Pia do Banheiro</div>
+    </div>
+    <div class="galeria-item" onclick="galeriaAbrir('https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/TV%20DIAMANTE.png','TV')">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousadadiamantefotos/main/diamante/TV%20DIAMANTE.png" alt="TV" loading="lazy">
+      <div class="foto-legenda">TV</div>
+    </div>
+  </div>
+
+  <div id="galeria-regiao" class="galeria-grid galeria-hidden">
+    <div class="galeria-item"><div class="galeria-placeholder">🏔️<span>Serra da Canastra</span></div></div>
+    <div class="galeria-item"><div class="galeria-placeholder">💧<span>Cachoeiras</span></div></div>
+    <div class="galeria-item"><div class="galeria-placeholder">🌊<span>Lago de Furnas</span></div></div>
+    <div class="galeria-item"><div class="galeria-placeholder">🌄<span>Pôr do Sol</span></div></div>
+    <div class="galeria-item"><div class="galeria-placeholder">🧀<span>Queijaria</span></div></div>
+    <div class="galeria-item"><div class="galeria-placeholder">🌿<span>Nascente do Rio SF</span></div></div>
+  </div>
+</section>
+
+<div class="lb-overlay" id="lb-overlay" onclick="galeriaFechar(event)">
+  <button class="lb-fechar" onclick="document.getElementById('lb-overlay').classList.remove('aberto')">×</button>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-legenda" id="lb-legenda"></div>
+</div>
+
+<script>
+  function galeriamostrar(cat, btn) {
+    document.querySelectorAll('.galeria-btn').forEach(b => b.classList.remove('ativo'));
+    btn.classList.add('ativo');
+    document.getElementById('galeria-pousada').classList.toggle('galeria-hidden', cat !== 'pousada');
+    document.getElementById('galeria-regiao').classList.toggle('galeria-hidden', cat !== 'regiao');
+  }
+  function galeriaAbrir(url, legenda) {
+    document.getElementById('lb-img').src = url;
+    document.getElementById('lb-legenda').textContent = legenda;
+    document.getElementById('lb-overlay').classList.add('aberto');
+  }
+  function galeriaFechar(e) {
+    if (e.target === document.getElementById('lb-overlay')) {
+      document.getElementById('lb-overlay').classList.remove('aberto');
+    }
+  }
+</script>
 <!-- FOOTER / CONTACT -->
 <div class="footer-bg">
   <div class="footer-logo">São <em>Francisco</em></div>
