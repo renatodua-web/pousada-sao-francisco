@@ -275,7 +275,9 @@
   .amenity-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(194,96,42,0.12); }
   .amenity-card:hover::after { transform: scaleX(1); }
 
-  .amenity-icon { font-size: 26px; margin-bottom: 10px; }
+  .amenity-icon { font-size: 26px; margin-right: 10px; }
+  .amenity-card { display: flex; flex-wrap: wrap; align-items: flex-start; }
+  .amenity-header { display: flex; align-items: center; width: 100%; margin-bottom: 6px; }
 
   .amenity-title {
     font-size: 11px;
@@ -680,37 +682,31 @@
 <!-- AMENITIES -->
 <section class="reveal visible" style="padding-top: 0;">
 
-  <div class="amenities-grid">
+ <div class="amenities-grid">
     <div class="amenity-card">
-      <div class="amenity-icon">☕</div>
-      <div class="amenity-title">Café da Manhã</div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;"><div class="amenity-icon">☕</div><div class="amenity-title">Café da Manhã</div></div>
       <p style="font-size:12px; margin-top:6px; opacity:0.7; line-height:1.5;">Sabores tradicionais do território da Canastra, servidos diariamente das 7h às 10h</p>
     </div>
     <div class="amenity-card">
-      <div class="amenity-icon">🅿️</div>
-      <div class="amenity-title">Estacionamento</div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;"><div class="amenity-icon">🅿️</div><div class="amenity-title">Estacionamento</div></div>
       <p style="font-size:12px; margin-top:6px; opacity:0.7; line-height:1.5;">Vagas privativas e seguras para seu veículo</p>
     </div>
     <div class="amenity-card">
-      <div class="amenity-icon">📶</div>
-      <div class="amenity-title">Wi-Fi</div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;"><div class="amenity-icon">📶</div><div class="amenity-title">Wi-Fi</div></div>
       <p style="font-size:12px; margin-top:6px; opacity:0.7; line-height:1.5;">Internet de alta velocidade em todos os ambientes</p>
     </div>
     <div class="amenity-card">
-      <div class="amenity-icon">🛣️</div>
-      <div class="amenity-title">Passeios &amp; Restaurantes</div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;"><div class="amenity-icon">🛣️</div><div class="amenity-title">Passeios &amp; Restaurantes</div></div>
       <p style="font-size:12px; margin-top:6px; opacity:0.7; line-height:1.5;">Indicações exclusivas dos melhores roteiros e experiências gastronômicas da região</p>
     </div>
     <div class="amenity-card">
-      <div class="amenity-icon">👩‍🦱</div>
-      <div class="amenity-title">Secador de Cabelo</div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;"><div class="amenity-icon">👩‍🦱</div><div class="amenity-title">Secador de Cabelo</div></div>
       <p style="font-size:12px; margin-top:6px; opacity:0.7; line-height:1.5;">Disponível sob solicitação</p>
     </div>
     <div class="amenity-card">
-      <div class="amenity-icon">🧹</div>
-      <div class="amenity-title">Arrumação Diária</div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;"><div class="amenity-icon">🧹</div><div class="amenity-title">Arrumação Diária</div></div>
       <p style="font-size:12px; margin-top:6px; opacity:0.7; line-height:1.5;">Ambientes sempre organizados com cuidado e atenção</p>
-    </div>
+    
   </div>
 </section>
 
@@ -1222,9 +1218,9 @@
     </div>
   </div>
 <div style="display:flex; flex-direction:column; align-items:center; gap:12px; width:100%;">
-    <a class="cta-btn outline" href="https://www.instagram.com/pousadasaofrancisco.diamante?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" style="width:100%; max-width:320px; text-align:center;">📸 Instagram</a>
-    <a class="cta-btn outline" href="https://maps.app.goo.gl/FtCpEKZ8tAxtSSsh7" target="_blank" style="width:100%; max-width:320px; text-align:center;">📍 Localização</a>
-    <a class="cta-btn outline" href="https://www.google.com/travel/search?q=pousada%20sao%20francisco%20diamante%20sjbg&g2lb=4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C73059275%2C73064764&hl=pt-BR&gl=uy&cs=1&ssta=1&ts=CAEaRwopEicyJTB4OTRiNmI5ZDM2OWU3OTUwNzoweGQ1NzUwNTIxNWViMmNlYzMSGhIUCgcI6g8QBRgEEgcI6g8QBRgFGAEyAggC&qs=CAEyFENnc0l3NTNMOVpXa3diclZBUkFCOAJCCQnDzrJeIQV11UIJCcPOsl4hBXXV&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwiAytfxt_KTAxUAAAAAHQAAAAAQBA" target="_blank" style="width:100%; max-width:320px; text-align:center;">⭐ Avaliações</a>
+    <a class="cta-btn" href="https://www.instagram.com/pousadasaofrancisco.diamante?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" style="width:100%; max-width:320px; text-align:center;">📸 Instagram</a>
+    <a class="cta-btn" href="https://maps.app.goo.gl/FtCpEKZ8tAxtSSsh7" target="_blank" style="width:100%; max-width:320px; text-align:center;">📍 Localização</a>
+    <a class="cta-btn" href="https://www.google.com/travel/search?q=pousada%20sao%20francisco%20diamante%20sjbg&g2lb=4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C73059275%2C73064764&hl=pt-BR&gl=uy&cs=1&ssta=1&ts=CAEaRwopEicyJTB4OTRiNmI5ZDM2OWU3OTUwNzoweGQ1NzUwNTIxNWViMmNlYzMSGhIUCgcI6g8QBRgEEgcI6g8QBRgFGAEyAggC&qs=CAEyFENnc0l3NTNMOVpXa3diclZBUkFCOAJCCQnDzrJeIQV11UIJCcPOsl4hBXXV&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwiAytfxt_KTAxUAAAAAHQAAAAAQBA" target="_blank" style="width:100%; max-width:320px; text-align:center;">⭐ Avaliações</a>
   </div>
   
   <p class="footer-copy">© Pousada São Francisco Diamante · Todos os direitos reservados</p>
