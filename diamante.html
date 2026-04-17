@@ -81,6 +81,14 @@
   margin-bottom: 20px;
   opacity: 0;
   animation: fadeUp 0.8s 0.4s forwards;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+  
+.hero-tree:hover {
+  transform: perspective(600px) rotateY(15deg) rotateX(5deg) scale(1.05);
+  box-shadow: -12px 12px 32px rgba(0,0,0,0.35), 4px 4px 12px rgba(201,147,42,0.3);
   }
 
   .hero h1 {
