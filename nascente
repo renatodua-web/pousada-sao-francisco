@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pousada Diamante – São João Batista do Glória</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@200;300;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --verde: #2A8A6E;
+            --verde-dark: #1A5C49;
+            --verde-light: #4AB896;
+            --verde-pale: #A8DFD0;
+            --cream: #F0FAF6;
+            --gold: #2A9A7A;
+            --gold-light: #6EDCBB;
+            --dark: #0E2A22;
+            --text: #103D2E;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(160deg, var(--verde-dark) 0%, var(--verde) 45%, var(--verde-light) 100%);
+            overflow: hidden;
+            text-align: center;
+            padding: 60px 24px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='60' r='58' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='40' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 120px 120px;
+            opacity: 0.6;
+        }
+
+        .hero-noise {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+
+        .hero-badge {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 200;
+            font-size: 11px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--verde-pale);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.2s forwards;
+        }
+
+        .hero-logo-wrap {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.4s forwards;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(255,255,255,0.5);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+            background: white;
+        }
+
+        .hero-logo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(40px, 8vw, 75px);
+            color: var(--white);
+            line-height: 0.9;
+            letter-spacing: -0.01em;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.6s forwards;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--gold-light);
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--gold-light);
+            margin: 28px auto;
+            opacity: 0;
+            animation: fadeUp 0.8s 1s forwards;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(16px, 4vw, 22px);
+            color: rgba(255,255,255,0.85);
+            max-width: 550px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeUp 0.8s 1.2s forwards;
+        }
+
+        /* Botão de Avaliações Específico */
+        .reviews-btn {
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeUp 0.8s 1.4s forwards;
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            padding: 80px 24px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 10px;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: #1A5C49;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 7vw, 52px);
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--verde-dark);
+            margin-bottom: 24px;
+        }
+
+        .divider-gold {
+            width: 50px;
+            height: 2px;
+            background: var(--gold);
+            margin-bottom: 32px;
+        }
+
+        /* ── LOCALIZAÇÃO ── */
+        .location-block {
+            background: var(--verde-dark);
+            color: var(--white);
+            padding: 40px 32px;
+            border-radius: 4px;
+            margin-top: 32px;
+        }
+
+        /* ── PRICING / DESCONTOS ── */
+        .price-card {
+            background: white;
+            border: 1px solid rgba(42,138,110,0.15);
+            padding: 28px 32px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .price-card.featured {
+            background: var(--verde);
+            color: white;
+        }
+
+        /* ── BUTTONS ── */
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--verde);
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: all 0.2s;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .cta-btn:hover { background: var(--verde-light); transform: translateY(-2px); }
+        
+        .cta-btn.gold {
+            background: #D4AF37; /* Tom de ouro para destaque */
+            color: #0E2A22;
+            font-weight: 600;
+        }
+
+        /* ── FOOTER ── */
+        .footer-bg {
+            background: linear-gradient(160deg, var(--verde-dark), var(--dark));
+            padding: 80px 24px 48px;
+            text-align: center;
+            color: white;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            .price-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-noise"></div>
+
+    <p class="hero-badge">Bem-vindo à</p>
+
+    <div class="hero-logo-wrap">
+        <img src="SUA_LOGO_BASE64_OU_URL_AQUI" alt="Pousada Diamante">
+    </div>
+
+    <h1>Pousada <em>Diamante</em></h1>
+    
+    <div class="hero-divider"></div>
+
+    <p class="hero-tagline">
+        Sinta a pureza e o brilho de Minas Gerais em uma experiência exclusiva no coração do Glória.
+    </p>
+
+    <div class="reviews-btn">
+        <a href="#" class="cta-btn gold">Ver Avaliações dos Hóspedes</a>
+    </div>
+</div>
+
+<section id="localizacao">
+    <p class="section-label">Onde estamos</p>
+    <h2 class="section-title">Nossa <em>Localização</em></h2>
+    <div class="divider-gold"></div>
+    
+    <div class="location-block">
+        <p><strong>São João Batista do Glória - MG</strong></p>
+        <p>Localizada estrategicamente para quem busca o melhor acesso às maravilhas da Serra da Canastra.</p>
+    </div>
+</section>
+
+<section id="descontos">
+    <p class="section-label">Oportunidades</p>
+    <h2 class="section-title">Descontos <em>Especiais</em></h2>
+    <div class="divider-gold"></div>
+
+    <div class="price-card featured">
+        <div>
+            <p class="price-label">Reserva Direta</p>
+            <p class="price-name">Pacote Final de Semana</p>
+        </div>
+        <div style="text-align: right;">
+            <p class="price-value">10% OFF</p>
+            <p class="price-period">Pagamento via PIX</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-bg">
+    <h2 class="footer-logo">Pousada <em>Diamante</em></h2>
+    <p class="footer-sub">São João Batista do Glória</p>
+    
+    <div class="contact-items">
+        <div class="contact-item">
+            <strong>WhatsApp & Reservas</strong>
+            (35) 9XXXX-XXXX
+        </div>
+    </div>
+
+    <a href="https://wa.me/seunumeroaqui" class="cta-btn">Reservar via WhatsApp</a>
+    
+    <p class="footer-copy">© 2026 Pousada Diamante. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
