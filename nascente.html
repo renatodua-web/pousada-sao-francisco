@@ -378,3 +378,207 @@
     gap: 16px;
     margin-top: 32px;
   }
+Aqui está o terceiro bloco exatamente como você postou, mantendo toda a estrutura de estilos para o Check-in, Instruções de TV, Wi-Fi e o Rodapé (Footer).
+
+Este bloco finaliza a parte de estilos (CSS) do seu arquivo.
+
+CSS
+  .checkin-card {
+    background: white;
+    border: 1px solid rgba(42,138,110,0.12);
+    padding: 24px;
+    border-radius: 2px;
+    text-align: center;
+  }
+
+  .checkin-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--verde);
+    display: block;
+  }
+
+  .checkin-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #1A5C49;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* ── TV INSTRUCTIONS ── */
+  .tv-section-bg {
+    background: var(--dark);
+    padding: 80px 24px;
+  }
+
+  .tv-section-bg section { color: white; }
+  .tv-section-bg .section-title { color: white; }
+  .tv-section-bg .section-label { color: var(--verde-light); }
+  .tv-section-bg .divider-gold { background: var(--verde-light); }
+
+  .tv-steps {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tv-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+  }
+
+  .tv-step:last-child { border-bottom: none; }
+
+  .tv-step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--verde);
+    opacity: 0.5;
+    line-height: 1;
+    min-width: 48px;
+  }
+
+  .tv-step-content { flex: 1; }
+
+  .tv-step-title {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .tv-step-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+  }
+
+  .tv-step-icon { font-size: 22px; margin-top: 4px; }
+
+  /* ── WIFI ── */
+  .wifi-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+    padding: 24px 28px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .wifi-box .wifi-icon { font-size: 32px; }
+
+  .wifi-name {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+  }
+
+  .wifi-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: white;
+  }
+
+  .wifi-pass-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.4);
+    margin-top: 8px;
+    margin-bottom: 2px;
+  }
+
+  .wifi-pass {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── FOOTER / CONTACT ── */
+  .footer-bg {
+    background: linear-gradient(160deg, var(--verde-dark), var(--dark));
+    padding: 80px 24px 48px;
+    text-align: center;
+    color: white;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .footer-logo em { font-style: italic; color: var(--gold-light); }
+
+  .footer-sub {
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 40px;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .contact-item {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.95);
+    line-height: 1.6;
+  }
+
+  .contact-item strong {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--verde-light);
+    margin-bottom: 4px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--verde);
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 8px;
+  }
+
+  .cta-btn:hover { background: var(--verde-light); transform: translateY(-2px); }
+
+  .cta-btn.outline {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .cta-btn.outline:hover { background: rgba(255,255,255,0.08); }
