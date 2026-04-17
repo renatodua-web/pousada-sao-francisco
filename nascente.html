@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pousada Diamante – São João Batista do Glória</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@200;300;600&display=swap" rel="stylesheet">
@@ -29,6 +29,9 @@
       overflow-x: hidden;
     }
 
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
     /* ── HERO ── */
     .hero {
       position: relative;
@@ -38,58 +41,19 @@
       align-items: center;
       justify-content: center;
       background: linear-gradient(160deg, var(--verde-dark) 0%, var(--verde) 45%, var(--verde-light) 100%);
-      overflow: hidden;
       text-align: center;
       padding: 60px 24px;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='60' r='58' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='40' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");
-      background-size: 120px 120px;
-      opacity: 0.6;
-    }
-
-    .hero-noise {
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-      opacity: 0.4;
-    }
-
-    .hero-badge {
-      font-family: 'Josefin Sans', sans-serif;
-      font-weight: 200;
-      font-size: 11px;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--verde-pale);
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.2s forwards;
-    }
-
     .hero-logo-wrap {
-      width: 200px;
-      height: 200px;
+      width: 200px; height: 200px;
       margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.4s forwards;
-      position: relative;
       border-radius: 50%;
-      overflow: hidden;
       border: 4px solid rgba(255,255,255,0.5);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
       background: white;
-    }
-
-    .hero-logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
     }
 
     .hero h1 {
@@ -98,699 +62,148 @@
       font-size: clamp(48px, 10vw, 90px);
       color: var(--white);
       line-height: 0.9;
-      letter-spacing: -0.01em;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.6s forwards;
     }
 
-    .hero h1 em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--gold-light);
-    }
-
-    .hero-divider {
-      width: 60px;
-      height: 1px;
-      background: var(--gold-light);
-      margin: 28px auto;
-      opacity: 0;
-      animation: fadeUp 0.8s 1s forwards;
-    }
-
-    .hero-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: clamp(16px, 4vw, 22px);
-      color: rgba(255,255,255,0.85);
-      max-width: 480px;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fadeUp 0.8s 1.2s forwards;
-    }
-
-    /* Estilo do novo botão de avaliações */
-    .cta-btn {
-      display: inline-block;
-      padding: 14px 30px;
-      background: rgba(255,255,255,0.1);
-      color: white;
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      border: 1px solid var(--gold-light);
-      border-radius: 2px;
-      margin-top: 25px;
-      transition: all 0.3s ease;
-      opacity: 0;
-      animation: fadeUp 0.8s 1.4s forwards;
-    }
-
-    .cta-btn:hover {
-      background: var(--gold-light);
-      color: var(--verde-dark);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-divider { width: 60px; height: 1px; background: var(--gold-light); margin: 28px auto; }
+    .hero-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(16px, 4vw, 22px); color: rgba(255,255,255,0.85); max-width: 480px; line-height: 1.6; }
 
     /* ── SECTIONS ── */
-    section {
-      padding: 80px 24px;
-      max-width: 760px;
-      margin: 0 auto;
-    }
+    section { padding: 80px 24px; max-width: 760px; margin: 0 auto; }
+    .section-label { font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase; color: #1A5C49; margin-bottom: 12px; font-weight: 600; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 7vw, 52px); font-weight: 300; color: var(--verde-dark); margin-bottom: 24px; }
+    .section-title em { font-style: italic; color: var(--verde); }
+    .divider-gold { width: 50px; height: 2px; background: var(--gold); margin-bottom: 32px; }
 
-    .section-label {
-      font-size: 10px;
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
-      color: #1A5C49;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
+    /* ── AMENITIES ── */
+    .amenities-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+    .amenity-card { background: white; border: 1px solid rgba(42, 138, 110, 0.12); padding: 24px 20px; border-radius: 2px; text-align: center; }
+    .amenity-icon { font-size: 26px; margin-bottom: 10px; }
+    .amenity-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #0f3d2c; font-weight: 700; }
 
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 7vw, 52px);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--verde-dark);
-      margin-bottom: 24px;
-    }
-.section-title em {
-    font-style: italic;
-    color: var(--verde);
-  }
+    /* ── SUITES ── */
+    .suite-bg { background: linear-gradient(135deg, var(--verde) 0%, var(--verde-dark) 100%); padding: 80px 24px; }
+    .suite-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 32px; }
+    .suite-feature { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); font-size: 12px; color: white; text-transform: uppercase; }
 
-  .divider-gold {
-    width: 50px;
-    height: 2px;
-    background: var(--gold);
-    margin-bottom: 32px;
-  }
+    /* ── PRICING ── */
+    .pricing-wrap { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .price-card { background: white; border: 1px solid rgba(42,138,110,0.15); padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .price-name { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #0f3d2c; }
+    .price-value { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 600; color: #1A5C49; }
 
-  /* ── LOCALIZAÇÃO ── */
-  .location-block {
-    background: var(--verde-dark);
-    color: var(--white);
-    padding: 40px 32px;
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-    margin-top: 32px;
-  }
+    /* ── TV & WIFI ── */
+    .tv-section-bg { background: var(--dark); padding: 80px 24px; color: white; }
+    .tv-step { display: flex; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .tv-step-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--verde); opacity: 0.5; }
+    .wifi-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 24px 28px; margin-top: 24px; }
 
-  .location-block::before {
-    content: '';
-    position: absolute;
-    top: -40px; right: -40px;
-    width: 180px; height: 180px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.04);
-  }
+    /* ── FOOTER ── */
+    .footer-bg { background: linear-gradient(160deg, var(--verde-dark), var(--dark)); padding: 80px 24px; text-align: center; color: white; }
+    .cta-btn { display: inline-block; padding: 16px 40px; background: var(--verde); color: white; text-decoration: none; font-size: 11px; text-transform: uppercase; margin: 8px; border-radius: 2px; }
+    .cta-btn.outline { background: transparent; border: 1px solid rgba(255,255,255,0.3); }
+  </style>
+</head>
+<body>
 
-  .location-block p {
-    font-size: 14px;
-    letter-spacing: 0.05em;
-    line-height: 1.8;
-    opacity: 1;
-  }
-
-  .location-block strong {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    opacity: 0.85;
-    margin-bottom: 8px;
-  }
-
-  /* ── AMENITIES GRID ── */
-  .amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-top: 32px;
-  }
-
-  .amenity-card {
-    background: white;
-    border: 1px solid rgba(42, 138, 110, 0.12);
-    padding: 24px 20px;
-    border-radius: 2px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .amenity-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 100%; height: 2px;
-    background: linear-gradient(to right, var(--verde), var(--gold-light));
-    transform: scaleX(0);
-    transition: transform 0.3s;
-  }
-
-  .amenity-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(42,138,110,0.12); }
-  .amenity-card:hover::after { transform: scaleX(1); }
-
-  .amenity-icon { font-size: 26px; margin-bottom: 10px; }
-
-  .amenity-title {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #0f3d2c;
-    font-weight: 700;
-  }
-
-  /* ── SUITE FEATURES ── */
-  .suite-bg {
-    background: linear-gradient(135deg, var(--verde) 0%, var(--verde-dark) 100%);
-    padding: 80px 24px;
-  }
-
-  .suite-bg section { color: white; }
-  .suite-bg .section-title { color: white; }
-  .suite-bg .section-label { color: var(--gold-light); }
-  .suite-bg .divider-gold { background: var(--gold-light); }
-
-  .suite-features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 32px;
-  }
-
-  .suite-feature {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 16px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 2px;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: 1px solid rgba(255,255,255,0.15);
-    transition: background 0.2s;
-  }
-
-  .suite-feature:hover { background: rgba(255,255,255,0.18); }
-  .suite-feature span:first-child { font-size: 18px; }
-
-  /* ── DESCONTOS ESPECIAIS ── */
-  .pricing-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 32px;
-  }
-
-  .price-card {
-    background: white;
-    border: 1px solid rgba(42,138,110,0.15);
-    padding: 28px 32px;
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: all 0.25s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .price-card.featured {
-    background: var(--verde);
-    border-color: var(--verde);
-    color: white;
-  }
-
-  .price-card.featured .price-label { color: rgba(255,255,255,0.7); }
-  .price-card.featured .price-name { color: white; }
-  .price-card.featured .price-value { color: var(--gold-light); }
-  .price-card.featured .price-period { color: rgba(255,255,255,0.6); }
-
-  .price-label {
-    font-size: 9px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: #1A5C49;
-    margin-bottom: 4px;
-    font-weight: 700;
-  }
-
-  .price-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 400;
-    color: #0f3d2c;
-  }
-
-  .price-right { text-align: right; }
-
-  .price-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
-    font-weight: 600;
-    color: #1A5C49;
-    line-height: 1;
-  }
-
-  .price-period {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #666;
-    margin-top: 4px;
-  }
-
-  /* ── CHECKIN INFO ── */
-  .checkin-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-top: 32px;
-  }
-Aqui está o terceiro bloco exatamente como você postou, mantendo toda a estrutura de estilos para o Check-in, Instruções de TV, Wi-Fi e o Rodapé (Footer).
-
-Este bloco finaliza a parte de estilos (CSS) do seu arquivo.
-
-CSS
-  .checkin-card {
-    background: white;
-    border: 1px solid rgba(42,138,110,0.12);
-    padding: 24px;
-    border-radius: 2px;
-    text-align: center;
-  }
-
-  .checkin-time {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 300;
-    color: var(--verde);
-    display: block;
-  }
-
-  .checkin-label {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: #1A5C49;
-    font-weight: 600;
-    margin-top: 4px;
-  }
-
-  /* ── TV INSTRUCTIONS ── */
-  .tv-section-bg {
-    background: var(--dark);
-    padding: 80px 24px;
-  }
-
-  .tv-section-bg section { color: white; }
-  .tv-section-bg .section-title { color: white; }
-  .tv-section-bg .section-label { color: var(--verde-light); }
-  .tv-section-bg .divider-gold { background: var(--verde-light); }
-
-  .tv-steps {
-    margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .tv-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    position: relative;
-  }
-
-  .tv-step:last-child { border-bottom: none; }
-
-  .tv-step-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    font-weight: 300;
-    color: var(--verde);
-    opacity: 0.5;
-    line-height: 1;
-    min-width: 48px;
-  }
-
-  .tv-step-content { flex: 1; }
-
-  .tv-step-title {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: white;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
-  .tv-step-desc {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.05em;
-    line-height: 1.6;
-  }
-
-  .tv-step-icon { font-size: 22px; margin-top: 4px; }
-
-  /* ── WIFI ── */
-  .wifi-box {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 2px;
-    padding: 24px 28px;
-    margin-top: 24px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .wifi-box .wifi-icon { font-size: 32px; }
-
-  .wifi-name {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 4px;
-  }
-
-  .wifi-val {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    color: white;
-  }
-
-  .wifi-pass-label {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: rgba(255,255,255,0.4);
-    margin-top: 8px;
-    margin-bottom: 2px;
-  }
-
-  .wifi-pass {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    color: var(--gold-light);
-    letter-spacing: 0.05em;
-  }
-
-  /* ── FOOTER / CONTACT ── */
-  .footer-bg {
-    background: linear-gradient(160deg, var(--verde-dark), var(--dark));
-    padding: 80px 24px 48px;
-    text-align: center;
-    color: white;
-  }
-
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
-    font-weight: 300;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .footer-logo em { font-style: italic; color: var(--gold-light); }
-
-  .footer-sub {
-    font-size: 10px;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 40px;
-  }
-
-  .contact-items {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-
-  .contact-item {
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.95);
-    line-height: 1.6;
-  }
-
-  .contact-item strong {
-    display: block;
-    font-size: 9px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--verde-light);
-    margin-bottom: 4px;
-  }
-
-  .cta-btn {
-    display: inline-block;
-    padding: 16px 40px;
-    background: var(--verde);
-    color: white;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: background 0.2s, transform 0.2s;
-    font-family: 'Josefin Sans', sans-serif;
-    margin: 8px;
-  }
-
-  .cta-btn:hover { background: var(--verde-light); transform: translateY(-2px); }
-
-  .cta-btn.outline {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.3);
-  }
-    Com certeza, Renato. Aqui está exclusivamente o bloco de conteúdo que você enviou por último (as seções de "Sobre", "Comodidades", "Tarifas" e "Rodapé"), preservando a estrutura original de aproximadamente 207 linhas:
-
-HTML
-  <p class="hero-sub" style="margin-top:8px;">São João Batista do Glória · MG</p>
-  <div class="hero-divider"></div>
-  <p class="hero-tagline">Acolhimento genuíno entre a Serra da Canastra e o Lago de Furnas</p>
-
-  <div class="hero-scroll">
-    <span>Explorar</span>
-    <div class="scroll-line"></div>
-  </div>
+<div class="hero">
+  <div class="hero-logo-wrap">
+    <span style="color: var(--verde-dark); font-weight: bold; letter-spacing: 2px;">DIAMANTE</span>
+  </div>
+  <h1>Pousada <em>Diamante</em></h1>
+  <div class="hero-divider"></div>
+  <p class="hero-tagline">Acolhimento genuíno entre a Serra da Canastra e o Lago de Furnas</p>
 </div>
 
 <section class="reveal visible">
-  <p class="section-label">Sobre a Pousada</p>
-  <h2 class="section-title">Um refúgio no <em>coração de Glória</em></h2>
-  <div class="divider-gold"></div>
-  <p style="font-family:'Cormorant Garamond',serif; font-size:18px; line-height:1.8; color:#103D2E;">
-    Nossa pousada tem como principal objetivo o acolhimento ao hóspede, em um ambiente tranquilo pensado para toda a família. Localizada no centro de <strong>São João Batista do Glória</strong>, estamos estrategicamente situados entre a <strong>Serra da Canastra</strong> e o <strong>Lago de Furnas</strong> — oferecendo uma experiência genuína do território mineiro, com café da manhã repleto de produtos locais e indicações exclusivas de passeios e restaurantes.
-  </p>
-
-  <div class="location-block">
-    <strong>Endereço</strong>
-    <p>R. Rio de Janeiro, 3<br>São João Batista do Glória – MG, 37920-000</p>
-  </div>
+  <p class="section-label">Sobre a Pousada</p>
+  <h2 class="section-title">Um refúgio no <em>coração de Glória</em></h2>
+  <div class="divider-gold"></div>
+  <p style="font-family:'Cormorant Garamond',serif; font-size:18px; line-height:1.8; color:#103D2E;">
+    Nossa pousada tem como principal objetivo o acolhimento ao hóspede, em um ambiente tranquilo pensado para toda a família. Localizada no centro de <strong>São João Batista do Glória</strong>, estamos estrategicamente situados entre a <strong>Serra da Canastra</strong> e o <strong>Lago de Furnas</strong>.
+  </p>
+  <div class="location-block" style="background: var(--verde-dark); color: white; padding: 30px; margin-top: 20px; border-radius: 4px;">
+    <strong>Endereço</strong>
+    <p>R. Rio de Janeiro, 3 – São João Batista do Glória – MG, 37920-000</p>
+  </div>
 </section>
 
-<section class="reveal visible" style="padding-top: 0;">
-  <p class="section-label">Comodidades</p>
-  <h2 class="section-title">Tudo que você <em>precisa</em></h2>
-  <div class="divider-gold"></div>
-
-  <div class="amenities-grid">
-    <div class="amenity-card">
-      <div class="amenity-icon">☕</div>
-      <div class="amenity-title">Café da Manhã</div>
-      <p style="font-size:12px; margin-top:6px; color:#2a5c49; line-height:1.5;">Produtos tradicionais do Território Canastra · 7h às 10h</p>
-    </div>
-    <div class="amenity-card">
-      <div class="amenity-icon">🅿️</div>
-      <div class="amenity-title">Estacionamento</div>
-      <p style="font-size:12px; margin-top:6px; color:#2a5c49; line-height:1.5;">Vagas privativas e seguras para seu veículo</p>
-    </div>
-    <div class="amenity-card">
-      <div class="amenity-icon">📶</div>
-      <div class="amenity-title">Wi-Fi</div>
-      <p style="font-size:12px; margin-top:6px; color:#2a5c49; line-height:1.5;">Internet de alta velocidade em todos os ambientes</p>
-    </div>
-    <div class="amenity-card">
-      <div class="amenity-icon">🛣️</div>
-      <div class="amenity-title">Passeios & Restaurantes</div>
-      <p style="font-size:12px; margin-top:6px; color:#2a5c49; line-height:1.5;">Indicações exclusivas dos melhores roteiros e sabores locais</p>
-    </div>
-    <div class="amenity-card">
-      <div class="amenity-icon">👩‍🦱</div>
-      <div class="amenity-title">Secador de Cabelo</div>
-      <p style="font-size:12px; margin-top:6px; color:#2a5c49; line-height:1.5;">Disponível para empréstimo sob solicitação</p>
-    </div>
-    <div class="amenity-card">
-      <div class="amenity-icon">🧹</div>
-      <div class="amenity-title">Arrumação Diária</div>
-      <p style="font-size:12px; margin-top:6px; color:#2a5c49; line-height:1.5;">Quartos arrumados com cuidado todos os dias</p>
-    </div>
-  </div>
+<section class="reveal">
+  <p class="section-label">Comodidades</p>
+  <h2 class="section-title">Tudo que você <em>precisa</em></h2>
+  <div class="amenities-grid">
+    <div class="amenity-card"><div class="amenity-icon">☕</div><div class="amenity-title">Café da Manhã</div></div>
+    <div class="amenity-card"><div class="amenity-icon">🅿️</div><div class="amenity-title">Estacionamento</div></div>
+    <div class="amenity-card"><div class="amenity-icon">📶</div><div class="amenity-title">Wi-Fi</div></div>
+    <div class="amenity-card"><div class="amenity-icon">🛣️</div><div class="amenity-title">Passeios</div></div>
+    <div class="amenity-card"><div class="amenity-icon">👩‍🦱</div><div class="amenity-title">Secador</div></div>
+    <div class="amenity-card"><div class="amenity-icon">🧹</div><div class="amenity-title">Arrumação</div></div>
+  </div>
 </section>
 
 <div class="suite-bg">
-  <section class="reveal" style="padding-top:0; padding-bottom:0;">
-    <p class="section-label">Nos Quartos</p>
-    <h2 class="section-title">Conforto com <em>cuidado em cada detalhe</em></h2>
-    <div class="divider-gold"></div>
-    <p style="font-size:13px; letter-spacing:0.05em; line-height:1.8; color:rgba(255,255,255,0.95);">
-      Cada quarto é cuidadosamente preparado para oferecer aconchego e privacidade. Todos os detalhes pensados para o seu bem-estar.
-    </p>
-
-    <div class="suite-features">
-      <div class="suite-feature"><span>📺</span><span>TV</span></div>
-      <div class="suite-feature"><span>❄️</span><span>Ar-condicionado</span></div>
-      <div class="suite-feature"><span>🛏️</span><span>Cama de Casal King</span></div>
-      <div class="suite-feature"><span>🛁</span><span>Roupa de Cama</span></div>
-      <div class="suite-feature"><span>🛋️</span><span>Travesseiros & Edredom</span></div>
-      <div class="suite-feature"><span>🪥</span><span>Toalhas</span></div>
-      <div class="suite-feature"><span>🧴</span><span>Shampoo</span></div>
-      <div class="suite-feature"><span>🧼</span><span>Sabonete</span></div>
-      <div class="suite-feature"><span>🧊</span><span>Frigobar</span></div>
-      <div class="suite-feature"><span>🌿</span><span>Ambiente Tranquilo</span></div>
-    </div>
-  </section>
+  <section class="reveal">
+    <p class="section-label" style="color: var(--gold-light);">Nos Quartos</p>
+    <h2 class="section-title" style="color: white;">Conforto em <em>cada detalhe</em></h2>
+    <div class="suite-features">
+      <div class="suite-feature"><span>📺</span> TV</div>
+      <div class="suite-feature"><span>❄️</span> Ar-condicionado</div>
+      <div class="suite-feature"><span>🛏️</span> Cama King</div>
+      <div class="suite-feature"><span>🛁</span> Roupa de Cama</div>
+      <div class="suite-feature"><span>🧊</span> Frigobar</div>
+      <div class="suite-feature"><span>🌿</span> Silêncio</div>
+    </div>
+  </section>
 </div>
 
 <section class="reveal">
-  <p class="section-label">Tarifas</p>
-  <h2 class="section-title">Valores <em>por diária</em></h2>
-  <div class="divider-gold"></div>
-
-  <div class="pricing-wrap">
-    <div class="price-card">
-      <div>
-        <div class="price-label">Acomodação</div>
-        <div class="price-name">Individual</div>
-      </div>
-      <div class="price-right">
-        <div class="price-value">R$ 242</div>
-        <div class="price-period">por noite</div>
-      </div>
-    </div>
-
-    <div class="price-card">
-      <div>
-        <div class="price-label">Acomodação</div>
-        <div class="price-name">Duplo</div>
-      </div>
-      <div class="price-right">
-        <div class="price-value">R$ 324</div>
-        <div class="price-period">por noite</div>
-      </div>
-    </div>
-
-    <div class="price-card">
-      <div>
-        <div class="price-label">Acomodação</div>
-        <div class="price-name">Triplo</div>
-      </div>
-      <div class="price-right">
-        <div class="price-value">R$ 370</div>
-        <div class="price-period">por noite</div>
-      </div>
-    </div>
-
-    <div class="price-card">
-      <div>
-        <div class="price-label">Acomodação</div>
-        <div class="price-name">Quádruplo</div>
-      </div>
-      <div class="price-right">
-        <div class="price-value">R$ 460</div>
-        <div class="price-period">por noite</div>
-      </div>
-    </div>
-  </div>
-
-    <div style="margin-top: 20px; background: linear-gradient(135deg, var(--verde-dark), var(--verde)); border-radius: 4px; padding: 20px 28px; display: flex; align-items: center; gap: 16px; color: white;">
-    <div style="font-size: 28px; flex-shrink: 0;">🏷️</div>
-    <div>
-      <div style="font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px;">Promoção</div>
-      <div style="font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400;">
-        <strong style="color: var(--gold-light);">8% de desconto</strong> nas diárias de segunda a quinta-feira
-      </div>
-      <div style="font-size: 11px; opacity: 0.65; margin-top: 4px; letter-spacing: 0.05em;">Não válido em feriados</div>
-    </div>
-  </div>
-
-    <div class="checkin-row" style="margin-top:32px;">
-    <div class="checkin-card">
-      <span class="checkin-time">14h</span>
-      <p class="checkin-label">Check-in</p>
-    </div>
-    <div class="checkin-card">
-      <span class="checkin-time">12h</span>
-      <p class="checkin-label">Check-out</p>
-    </div>
-  </div>
+  <p class="section-label">Tarifas</p>
+  <h2 class="section-title">Valores <em>por diária</em></h2>
+  <div class="pricing-wrap">
+    <div class="price-card"><div><div class="price-name">Individual</div></div><div class="price-value">R$ 242</div></div>
+    <div class="price-card"><div><div class="price-name">Duplo</div></div><div class="price-value">R$ 324</div></div>
+    <div class="price-card"><div><div class="price-name">Triplo</div></div><div class="price-value">R$ 370</div></div>
+    <div class="price-card"><div><div class="price-name">Quádruplo</div></div><div class="price-value">R$ 460</div></div>
+  </div>
+  <div style="margin-top: 20px; background: linear-gradient(135deg, var(--verde-dark), var(--verde)); border-radius: 4px; padding: 20px; color: white;">
+    <strong style="color: var(--gold-light);">8% de desconto</strong> nas diárias de segunda a quinta-feira (exceto feriados).
+  </div>
 </section>
 
-
-
-<div style="background: linear-gradient(135deg, var(--verde-dark) 0%, var(--verde) 100%); padding: 80px 24px; text-align: center;">
-  <div style="max-width: 620px; margin: 0 auto;">
-    <div style="width: 40px; height: 1px; background: var(--gold-light); margin: 0 auto 32px;"></div>
-    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(22px, 5vw, 36px); color: white; line-height: 1.6; font-weight: 300; letter-spacing: 0.02em;">
-      "Quando você se hospeda na Pousada São Francisco,<br>estaremos juntos onde quer que vá."
-    </p>
-    <div style="width: 40px; height: 1px; background: var(--gold-light); margin: 32px auto 0;"></div>
-  </div>
+<div class="tv-section-bg">
+  <section class="reveal">
+    <p class="section-label" style="color: var(--verde-light);">Instruções</p>
+    <h2 class="section-title" style="color: white;">TV & <em>Wi-Fi</em></h2>
+    <div class="tv-step">
+      <div class="tv-step-num">01</div>
+      <div><strong>Ligar a TV</strong><br><small>Use o controle principal para ligar o aparelho e o receptor.</small></div>
+    </div>
+    <div class="wifi-box">
+      <div style="font-size: 11px; opacity: 0.5;">REDE WIFI</div>
+      <div style="font-size: 22px; font-family: 'Cormorant Garamond';">Pousada_Diamante</div>
+      <div style="color: var(--gold-light); margin-top: 5px;">Senha: diamante2024</div>
+    </div>
+  </section>
 </div>
 
-<div class="footer-bg">
-  <div class="footer-logo">São <em>Francisco</em></div>
-  <p class="footer-sub">Pousada · São João Batista do Glória · MG</p>
-
-  <div class="contact-items">
-    <div class="contact-item">
-      <strong>Endereço</strong>
-      R. Rio de Janeiro, 3 – São João Batista do Glória – MG, 37920-000
-    </div>
-    <div class="contact-item">
-      <strong>Telefone / WhatsApp</strong>
-      +55 37 98829-0093
-    </div>
-
-  </div>
-
-  <div>
-    <a class="cta-btn outline" href="https://maps.app.goo.gl/UFoKpAGpXkzYNfLM7" target="_blank">📍 Ver no Mapa</a>
-    <a class="cta-btn" href="https://www.instagram.com/pousadasaofranciscogloria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="margin-top:12px;">📸 Instagram</a>
-  </div>
-
-  <p class="footer-copy">© Pousada São Francisco · São João Batista do Glória · Todos os direitos reservados</p>
-</div>
+<footer class="footer-bg">
+  <div class="footer-logo" style="font-family: 'Cormorant Garamond'; font-size: 42px;">São <em>Francisco</em></div>
+  <p style="font-size: 10px; letter-spacing: 4px; opacity: 0.7;">POUSADA DIAMANTE · MG</p>
+  <div style="margin: 30px 0;">
+    <p><strong>WhatsApp:</strong> +55 37 98829-0093</p>
+  </div>
+  <a href="#" class="cta-btn">Reservar Agora</a>
+  <a href="https://www.instagram.com/pousadasaofranciscogloria" class="cta-btn outline">Instagram</a>
+</footer>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
-  .cta-btn.outline:hover { background: rgba(255,255,255,0.08); }
+</body>
+</html>
