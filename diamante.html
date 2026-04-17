@@ -970,7 +970,8 @@
     flex-wrap: wrap;
   }
   .galeria-btn {
-    padding: 12px 32px;
+    padding: 12px 0;             /* Tiramos o 32px das laterais */
+    min-width: 250px;            /* Definimos um tamanho fixo igual para os dois */
     border: 1.5px solid var(--terracota);
     background: transparent;
     color: var(--terracota);
@@ -981,6 +982,7 @@
     cursor: pointer;
     border-radius: 2px;
     transition: all 0.2s;
+    text-align: center;          /* Garante que o texto fique no meio */
   }
   .galeria-btn:hover { background: var(--terracota-pale); }
   .galeria-btn.ativo {
