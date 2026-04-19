@@ -978,8 +978,7 @@
     text-transform: uppercase;
     color: rgba(255,255,255,0.35);
   }
-</style>
-<style>
+  <style>
   .galeria-section {
     padding: 80px 24px;
     background: var(--cream);
@@ -992,8 +991,8 @@
     flex-wrap: wrap;
   }
   .galeria-btn {
-    padding: 12px 0;             /* Tiramos o 32px das laterais */
-    min-width: 250px;            /* Definimos um tamanho fixo igual para os dois */
+    padding: 12px 0;
+    min-width: 250px;
     border: 1.5px solid var(--terracota);
     background: transparent;
     color: var(--terracota);
@@ -1004,7 +1003,7 @@
     cursor: pointer;
     border-radius: 2px;
     transition: all 0.2s;
-    text-align: center;          /* Garante que o texto fique no meio */
+    text-align: center;
   }
   .galeria-btn:hover { background: var(--terracota-pale); }
   .galeria-btn.ativo {
@@ -1025,6 +1024,13 @@
     cursor: pointer;
     position: relative;
     background: var(--terracota-pale);
+    border: 1.5px solid rgba(194, 96, 42, 0.25);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  }
+  .galeria-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(194, 96, 42, 0.22);
+    border-color: rgba(194, 96, 42, 0.55);
   }
   .galeria-item img {
     width: 100%;
@@ -1107,8 +1113,6 @@
   }
 </style>
 
-</style>
-
 <section class="galeria-section reveal">
   <p class="section-label">Galeria</p>
   <h2 class="section-title">Descubra a <em>Pousada e os encantos da Região</em></h2>
@@ -1187,7 +1191,9 @@
       <img src="fotos-pousada/1.1logo.jpg" alt="Logo Pousada" loading="lazy">
       <div class="foto-legenda">Pousada Diamante</div>
     </div>
-  </div> <div id="galeria-regiao" class="galeria-grid galeria-hidden">
+  </div>
+
+  <div id="galeria-regiao" class="galeria-grid galeria-hidden">
     <div class="galeria-item" onclick="galeriaAbrir('fotos-regiao/lago1.jpg','Lago de Furnas')">
       <img src="fotos-regiao/lago1.jpg" alt="Lago de Furnas" loading="lazy">
       <div class="foto-legenda">Lago de Furnas</div>
@@ -1272,16 +1278,17 @@
     document.getElementById('galeria-pousada').classList.toggle('galeria-hidden', cat !== 'pousada');
     document.getElementById('galeria-regiao').classList.toggle('galeria-hidden', cat !== 'regiao');
   }
-  function galeriaAbrir(url, legenda) {
-    document.getElementById('lb-img').src = url;
+  function galeriaAbrir(src, legenda) {
+    document.getElementById('lb-img').src = src;
     document.getElementById('lb-legenda').textContent = legenda;
     document.getElementById('lb-overlay').classList.add('aberto');
   }
   function galeriaFechar(e) {
     if (e.target === document.getElementById('lb-overlay')) {
       document.getElementById('lb-overlay').classList.remove('aberto');
-    }
+    
   }
+</script>
 </script>
 <!-- FOOTER / CONTACT -->
 <div class="footer-bg">
