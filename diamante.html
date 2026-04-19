@@ -1068,7 +1068,7 @@
     color: var(--terracota-dark);
     text-transform: uppercase;
   }
-  .galeria-hidden { display: none; }
+  .galeria-hidden { display: none !important; }
   .lb-overlay {
     display: none;
     position: fixed;
@@ -1275,21 +1275,30 @@
   function galeriamostrar(cat, btn) {
     document.querySelectorAll('.galeria-btn').forEach(b => b.classList.remove('ativo'));
     btn.classList.add('ativo');
-    document.getElementById('galeria-pousada').classList.toggle('galeria-hidden', cat !== 'pousada');
-    document.getElementById('galeria-regiao').classList.toggle('galeria-hidden', cat !== 'regiao');
+    const pousada = document.getElementById('galeria-pousada');
+    const regiao = document.getElementById('galeria-regiao');
+    if (cat === 'pousada') {
+      pousada.classList.remove('galeria-hidden');
+      regiao.classList.add('galeria-hidden');
+    } else {
+      pousada.classList.add('galeria-hidden');
+      regiao.classList.remove('galeria-hidden');
+    }
   }
+
   function galeriaAbrir(src, legenda) {
     document.getElementById('lb-img').src = src;
     document.getElementById('lb-legenda').textContent = legenda;
     document.getElementById('lb-overlay').classList.add('aberto');
   }
+
   function galeriaFechar(e) {
     if (e.target === document.getElementById('lb-overlay')) {
       document.getElementById('lb-overlay').classList.remove('aberto');
-    
+    }
   }
 </script>
-</script>
+  
 <!-- FOOTER / CONTACT -->
 <div class="footer-bg">
   <div class="footer-logo">São Francisco <em>Diamante</em></div>
