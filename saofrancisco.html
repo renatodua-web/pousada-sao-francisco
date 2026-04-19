@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0072)file:///Users/renatoduarte/Downloads/pousada_sao_francisco_gloria_3.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- 
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pousada São Francisco – São João Batista do Glória</title>
 <link href="./Pousada São Francisco – São João Batista do Glória_files/css2" rel="stylesheet">
@@ -18,17 +18,17 @@
     --text: #103D2E;
     --white: #FFFFFF;
   }
- 
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
- 
+
   body {
     font-family: 'Josefin Sans', sans-serif;
     background: var(--cream);
     color: var(--text);
     overflow-x: hidden;
   }
- 
+
   /* ── HERO ── */
   .hero {
     position: relative;
@@ -42,7 +42,7 @@
     text-align: center;
     padding: 60px 24px;
   }
- 
+
   .hero::before {
     content: '';
     position: absolute;
@@ -51,14 +51,14 @@
     background-size: 120px 120px;
     opacity: 0.6;
   }
- 
+
   .hero-noise {
     position: absolute;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
     opacity: 0.4;
   }
- 
+
   .hero-badge {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 200;
@@ -70,7 +70,7 @@
     opacity: 0;
     animation: fadeUp 0.8s 0.2s forwards;
   }
- 
+
   /* Logo container */
   .hero-logo-wrap {
     width: 200px;
@@ -85,14 +85,14 @@
     box-shadow: 0 8px 32px rgba(0,0,0,0.35);
     background: white;
   }
- 
+
   .hero-logo-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
   }
- 
+
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
@@ -103,13 +103,13 @@
     opacity: 0;
     animation: fadeUp 0.8s 0.6s forwards;
   }
- 
+
   .hero h1 em {
     font-style: italic;
     font-weight: 300;
     color: var(--gold-light);
   }
- 
+
   .hero-sub {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
@@ -121,7 +121,7 @@
     opacity: 0;
     animation: fadeUp 0.8s 0.8s forwards;
   }
- 
+
   .hero-divider {
     width: 60px;
     height: 1px;
@@ -130,7 +130,7 @@
     opacity: 0;
     animation: fadeUp 0.8s 1s forwards;
   }
- 
+
   .hero-tagline {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -141,7 +141,7 @@
     opacity: 0;
     animation: fadeUp 0.8s 1.2s forwards;
   }
- 
+
   .hero-scroll {
     position: absolute;
     bottom: 32px;
@@ -154,35 +154,35 @@
     opacity: 0;
     animation: fadeIn 1s 2s forwards;
   }
- 
+
   .hero-scroll span {
     font-size: 9px;
     letter-spacing: 0.3em;
     color: rgba(255,255,255,0.5);
     text-transform: uppercase;
   }
- 
+
   .scroll-line {
     width: 1px;
     height: 40px;
     background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
     animation: scrollLine 2s 2s infinite;
   }
- 
+
   @keyframes scrollLine {
     0% { transform: scaleY(0); transform-origin: top; }
     50% { transform: scaleY(1); transform-origin: top; }
     51% { transform: scaleY(1); transform-origin: bottom; }
     100% { transform: scaleY(0); transform-origin: bottom; }
   }
- 
+
   /* ── SECTIONS ── */
   section {
     padding: 80px 24px;
     max-width: 760px;
     margin: 0 auto;
   }
- 
+
   .section-label {
     font-size: 10px;
     letter-spacing: 0.5em;
@@ -191,7 +191,7 @@
     margin-bottom: 12px;
     font-weight: 600;
   }
- 
+
   .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(32px, 7vw, 52px);
@@ -200,19 +200,19 @@
     color: var(--verde-dark);
     margin-bottom: 24px;
   }
- 
+
   .section-title em {
     font-style: italic;
     color: var(--verde);
   }
- 
+
   .divider-gold {
     width: 50px;
     height: 2px;
     background: var(--gold);
     margin-bottom: 32px;
   }
- 
+
   /* ── LOCATION ── */
   .location-block {
     background: var(--verde-dark);
@@ -223,7 +223,7 @@
     overflow: hidden;
     margin-top: 32px;
   }
- 
+
   .location-block::before {
     content: '';
     position: absolute;
@@ -232,14 +232,14 @@
     border-radius: 50%;
     background: rgba(255,255,255,0.04);
   }
- 
+
   .location-block p {
     font-size: 14px;
     letter-spacing: 0.05em;
     line-height: 1.8;
     opacity: 1;
   }
- 
+
   .location-block strong {
     display: block;
     font-size: 11px;
@@ -248,7 +248,7 @@
     opacity: 0.85;
     margin-bottom: 8px;
   }
- 
+
   /* ── AMENITIES GRID ── */
   .amenities-grid {
     display: grid;
@@ -256,17 +256,17 @@
     gap: 16px;
     margin-top: 32px;
   }
- 
+
   .amenity-card {
     background: white;
-    border: 1px solid rgba(42, 138, 110, 0.12);
+    border: 1.5px solid rgba(42, 138, 110, 0.4);
     padding: 24px 20px;
     border-radius: 2px;
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative;
     overflow: hidden;
   }
- 
+
   .amenity-card::after {
     content: '';
     position: absolute;
@@ -276,12 +276,12 @@
     transform: scaleX(0);
     transition: transform 0.3s;
   }
- 
+
   .amenity-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(42,138,110,0.12); }
   .amenity-card:hover::after { transform: scaleX(1); }
- 
+
   .amenity-icon { font-size: 26px; margin-bottom: 10px; }
- 
+
   .amenity-title {
     font-size: 11px;
     letter-spacing: 0.2em;
@@ -289,26 +289,26 @@
     color: #0f3d2c;
     font-weight: 700;
   }
- 
+
   /* ── SUITE FEATURES ── */
   .suite-bg {
     background: linear-gradient(135deg, var(--verde) 0%, var(--verde-dark) 100%);
     padding: 80px 24px;
   }
- 
+
   .suite-bg section { color: white; }
   .suite-bg .section-title { color: white; }
   .suite-bg .section-title em { color: var(--gold-light); }
   .suite-bg .section-label { color: var(--gold-light); }
   .suite-bg .divider-gold { background: var(--gold-light); }
- 
+
   .suite-features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-top: 32px;
   }
- 
+
   .suite-feature {
     display: flex;
     align-items: center;
@@ -322,10 +322,10 @@
     border: 1px solid rgba(255,255,255,0.15);
     transition: background 0.2s;
   }
- 
+
   .suite-feature:hover { background: rgba(255,255,255,0.18); }
   .suite-feature span:first-child { font-size: 18px; }
- 
+
   /* ── PRICING ── */
   .pricing-wrap {
     display: flex;
@@ -333,10 +333,10 @@
     gap: 16px;
     margin-top: 32px;
   }
- 
+
   .price-card {
     background: white;
-    border: 1px solid rgba(42,138,110,0.15);
+    border: 1.5px solid rgba(42,138,110,0.4);
     padding: 28px 32px;
     border-radius: 2px;
     display: flex;
@@ -346,18 +346,18 @@
     position: relative;
     overflow: hidden;
   }
- 
+
   .price-card.featured {
     background: var(--verde);
     border-color: var(--verde);
     color: white;
   }
- 
+
   .price-card.featured .price-label { color: rgba(255,255,255,0.7); }
   .price-card.featured .price-name { color: white; }
   .price-card.featured .price-value { color: var(--gold-light); }
   .price-card.featured .price-period { color: rgba(255,255,255,0.6); }
- 
+
   .price-label {
     font-size: 9px;
     letter-spacing: 0.4em;
@@ -366,24 +366,24 @@
     margin-bottom: 4px;
     font-weight: 700;
   }
- 
+
   .price-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 400;
     color: #0f3d2c;
   }
- 
+
   .price-right { text-align: right; }
- 
+
   .price-value {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
+    font-size: 30px;
     font-weight: 600;
     color: #1A5C49;
     line-height: 1;
   }
- 
+
   .price-period {
     font-size: 10px;
     letter-spacing: 0.2em;
@@ -391,7 +391,7 @@
     color: #666;
     margin-top: 4px;
   }
- 
+
   /* ── CHECKIN INFO ── */
   .checkin-row {
     display: grid;
@@ -399,15 +399,15 @@
     gap: 16px;
     margin-top: 32px;
   }
- 
+
   .checkin-card {
     background: white;
-    border: 1px solid rgba(42,138,110,0.12);
+    border: 1.5px solid rgba(42,138,110,0.4);
     padding: 24px;
     border-radius: 2px;
     text-align: center;
   }
- 
+
   .checkin-time {
     font-family: 'Cormorant Garamond', serif;
     font-size: 36px;
@@ -415,7 +415,7 @@
     color: var(--verde);
     display: block;
   }
- 
+
   .checkin-label {
     font-size: 10px;
     letter-spacing: 0.3em;
@@ -424,25 +424,25 @@
     font-weight: 600;
     margin-top: 4px;
   }
- 
+
   /* ── TV INSTRUCTIONS ── */
   .tv-section-bg {
     background: var(--dark);
     padding: 80px 24px;
   }
- 
+
   .tv-section-bg section { color: white; }
   .tv-section-bg .section-title { color: white; }
   .tv-section-bg .section-label { color: var(--verde-light); }
   .tv-section-bg .divider-gold { background: var(--verde-light); }
- 
+
   .tv-steps {
     margin-top: 32px;
     display: flex;
     flex-direction: column;
     gap: 0;
   }
- 
+
   .tv-step {
     display: flex;
     align-items: flex-start;
@@ -451,9 +451,9 @@
     border-bottom: 1px solid rgba(255,255,255,0.07);
     position: relative;
   }
- 
+
   .tv-step:last-child { border-bottom: none; }
- 
+
   .tv-step-num {
     font-family: 'Cormorant Garamond', serif;
     font-size: 48px;
@@ -463,9 +463,9 @@
     line-height: 1;
     min-width: 48px;
   }
- 
+
   .tv-step-content { flex: 1; }
- 
+
   .tv-step-title {
     font-size: 11px;
     letter-spacing: 0.3em;
@@ -474,16 +474,16 @@
     font-weight: 600;
     margin-bottom: 4px;
   }
- 
+
   .tv-step-desc {
     font-size: 12px;
     color: rgba(255,255,255,0.5);
     letter-spacing: 0.05em;
     line-height: 1.6;
   }
- 
+
   .tv-step-icon { font-size: 22px; margin-top: 4px; }
- 
+
   /* ── WIFI ── */
   .wifi-box {
     background: rgba(255,255,255,0.06);
@@ -495,9 +495,9 @@
     align-items: center;
     gap: 20px;
   }
- 
+
   .wifi-box .wifi-icon { font-size: 32px; }
- 
+
   .wifi-name {
     font-size: 11px;
     letter-spacing: 0.3em;
@@ -505,13 +505,13 @@
     color: rgba(255,255,255,0.5);
     margin-bottom: 4px;
   }
- 
+
   .wifi-val {
     font-family: 'Cormorant Garamond', serif;
     font-size: 22px;
     color: white;
   }
- 
+
   .wifi-pass-label {
     font-size: 10px;
     letter-spacing: 0.3em;
@@ -519,14 +519,14 @@
     margin-top: 8px;
     margin-bottom: 2px;
   }
- 
+
   .wifi-pass {
     font-family: 'Cormorant Garamond', serif;
     font-size: 22px;
     color: var(--gold-light);
     letter-spacing: 0.05em;
   }
- 
+
   /* ── FOOTER / CONTACT ── */
   .footer-bg {
     background: linear-gradient(160deg, var(--verde-dark), var(--dark));
@@ -534,7 +534,7 @@
     text-align: center;
     color: white;
   }
- 
+
   .footer-logo {
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
@@ -542,9 +542,9 @@
     line-height: 1;
     margin-bottom: 4px;
   }
- 
+
   .footer-logo em { font-style: italic; color: var(--gold-light); }
- 
+
   .footer-sub {
     font-size: 10px;
     letter-spacing: 0.5em;
@@ -552,21 +552,21 @@
     color: rgba(255,255,255,0.7);
     margin-bottom: 40px;
   }
- 
+
   .contact-items {
     display: flex;
     flex-direction: column;
     gap: 16px;
     margin-bottom: 40px;
   }
- 
+
   .contact-item {
     font-size: 13px;
     letter-spacing: 0.1em;
     color: rgba(255,255,255,0.95);
     line-height: 1.6;
   }
- 
+
   .contact-item strong {
     display: block;
     font-size: 9px;
@@ -575,7 +575,7 @@
     color: var(--verde-light);
     margin-bottom: 4px;
   }
- 
+
   .cta-btn {
     display: inline-block;
     padding: 16px 40px;
@@ -590,16 +590,16 @@
     font-family: 'Josefin Sans', sans-serif;
     margin: 8px;
   }
- 
+
   .cta-btn:hover { background: var(--verde-light); transform: translateY(-3px) scale(1.04); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
- 
+
   .cta-btn.outline {
     background: transparent;
     border: 1px solid rgba(255,255,255,0.3);
   }
- 
+
   .cta-btn.outline:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px) scale(1.04); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
- 
+
   .footer-copy {
     font-size: 10px;
     letter-spacing: 0.2em;
@@ -607,29 +607,29 @@
     margin-top: 48px;
     text-transform: uppercase;
   }
- 
+
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
- 
+
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
   }
- 
+
   .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
- 
+
   .reveal.visible {
     opacity: 1;
     transform: translateY(0);
   }
- 
+
   /* ── RESPONSIVE ── */
   @media (max-width: 480px) {
     .amenities-grid { grid-template-columns: 1fr; }
@@ -646,25 +646,25 @@
 </style>
 </head>
 <body>
- 
+
 <!-- HERO -->
 <div class="hero">
   <div class="hero-noise"></div>
- 
+
   <p class="hero-badge">Bem-vindo à</p>
- 
+
   <div class="hero-logo-wrap">
     <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-pousada/logosaofrancisco.jpg" alt="Logo Pousada São Francisco">
   </div>
- 
+
   <div class="hero-divider"></div>
   <p class="hero-tagline">Mais do que hospedar, cuidamos de você em todos os momentos da sua estadia — dentro e fora da pousada.</p>
- 
+
   <div class="hero-scroll">
     <div class="scroll-line"></div>
   </div>
 </div>
- 
+
 <!-- ABOUT -->
 <section class="reveal visible">
   <p class="section-label">Sobre a Pousada</p>
@@ -674,7 +674,7 @@
     Nossa pousada tem como principal objetivo o acolhimento ao hóspede, em um ambiente tranquilo pensado para toda a família. Localizada no centro de <strong>São João Batista do Glória</strong>, estamos estrategicamente situados entre a <strong>Serra da Canastra</strong> e o <strong>Lago de Furnas</strong> — oferecendo uma experiência genuína do território mineiro, com café da manhã repleto de produtos locais e indicações exclusivas de passeios e restaurantes.
   </p>
 </section>
- 
+
 <!-- AMENITIES -->
 <div style="background: var(--verde-dark); padding: 80px 24px 40px;">
   <div style="max-width: 760px; margin: 0 auto;">
@@ -685,7 +685,7 @@
     <div style="width: 50px; height: 2px; background: var(--gold-light);"></div>
   </div>
 </div>
- 
+
 <section class="reveal visible" style="padding-top: 32px;">
   <div class="amenities-grid">
     <div class="amenity-card">
@@ -740,7 +740,7 @@
     <p style="font-size:13px; letter-spacing:0.05em; line-height:1.8; color:rgba(255,255,255,0.95);">
       Cada quarto é cuidadosamente preparado para oferecer aconchego e privacidade. Todos os detalhes pensados para o seu bem-estar.
     </p>
- 
+
     <div class="suite-features">
       <div class="suite-feature"><span>📺</span><span>TV</span></div>
       <div class="suite-feature"><span>❄️</span><span>Ar-condicionado</span></div>
@@ -755,13 +755,13 @@
     </div>
   </section>
 </div>
- 
+
 <!-- PRICING -->
 <section class="reveal visible">
   <p class="section-label">Tarifas</p>
   <h2 class="section-title">Valores <em>por diária</em></h2>
   <div class="divider-gold"></div>
- 
+
   <div class="pricing-wrap">
     <div class="price-card">
       <div>
@@ -773,7 +773,7 @@
         <div class="price-period">por noite</div>
       </div>
     </div>
- 
+
     <div class="price-card">
       <div>
         <div class="price-label">Acomodação</div>
@@ -784,7 +784,7 @@
         <div class="price-period">por noite</div>
       </div>
     </div>
- 
+
     <div class="price-card">
       <div>
         <div class="price-label">Acomodação</div>
@@ -795,7 +795,7 @@
         <div class="price-period">por noite</div>
       </div>
     </div>
- 
+
     <div class="price-card">
       <div>
         <div class="price-label">Acomodação</div>
@@ -807,7 +807,7 @@
       </div>
     </div>
   </div>
- 
+
   <!-- DESCONTO SEMANA -->
   <div style="margin-top: 20px; background: linear-gradient(135deg, var(--verde-dark), var(--verde)); border-radius: 4px; padding: 20px 28px; display: flex; align-items: center; gap: 16px; color: white;">
     <div style="font-size: 28px; flex-shrink: 0;">🏷️</div>
@@ -819,7 +819,7 @@
       <div style="font-size: 11px; opacity: 0.65; margin-top: 4px; letter-spacing: 0.05em;">Não válido em feriados</div>
     </div>
   </div>
- 
+
   <!-- Check-in / Check-out -->
   <div class="checkin-row" style="margin-top:32px;">
     <div class="checkin-card">
@@ -832,14 +832,103 @@
     </div>
   </div>
 </section>
- 
- 
- 
+
+<!-- GALERIA -->
+<div style="background: var(--cream); padding: 80px 24px;">
+  <div style="max-width: 760px; margin: 0 auto;">
+    <p style="font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase; color: var(--verde); font-weight: 600; margin-bottom: 12px;">Galeria</p>
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 6vw, 46px); font-weight: 300; color: var(--verde-dark); line-height: 1.2; margin-bottom: 24px;">
+      Descubra a <em style="font-style: italic; color: var(--verde);">Pousada e os encantos da Região</em>
+    </h2>
+    <div style="width: 50px; height: 2px; background: var(--gold); margin-bottom: 32px;"></div>
+
+    <!-- Botões -->
+    <div style="display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; justify-content: center;">
+      <button onclick="showGallery('pousada')" id="btn-pousada" style="
+        padding: 14px 0; width: 220px; font-family: 'Josefin Sans', sans-serif;
+        font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+        background: var(--verde); color: white;
+        border: 2px solid var(--verde); border-radius: 2px;
+        cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, background 0.2s;">
+        Ambientes da Pousada
+      </button>
+      <button onclick="showGallery('regiao')" id="btn-regiao" style="
+        padding: 14px 0; width: 220px; font-family: 'Josefin Sans', sans-serif;
+        font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+        background: transparent; color: var(--verde);
+        border: 2px solid var(--verde); border-radius: 2px;
+        cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, background 0.2s;">
+        Belezas da Região
+      </button>
+    </div>
+
+    <!-- Grade pousada -->
+    <div id="gallery-pousada" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/1.1fachada.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/1.2fachada.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/1.3fachada.jpeg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/2.sala comum.jpeg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/4.1suite.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/4.2suitejardim.jpeg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/4.3suitefamilia.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/4.4suitefamilia.jpeg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/4.5banheiro.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/5.01refeitorio.jpeg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/5.1café.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotossaofrancisco/5.2café.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+
+    <!-- Grade região -->
+    <div id="gallery-regiao" style="display: none; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/cachoeira1.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/cachoeira3.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/cachoeira4.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/cachoeira5.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/cachoeira6.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/lago1.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/lago2.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/gloria1.jpeg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/gloria2.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/rio1.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/cultura2.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-regiao/cutura1.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; transition: transform 0.3s; cursor:pointer;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+  </div>
+</div>
+
+<script>
+function showGallery(tab) {
+  const pousada = document.getElementById('gallery-pousada');
+  const regiao = document.getElementById('gallery-regiao');
+  const btnP = document.getElementById('btn-pousada');
+  const btnR = document.getElementById('btn-regiao');
+  if (tab === 'pousada') {
+    pousada.style.display = 'grid';
+    regiao.style.display = 'none';
+    btnP.style.background = 'var(--verde)';
+    btnP.style.color = 'white';
+    btnR.style.background = 'transparent';
+    btnR.style.color = 'var(--verde)';
+  } else {
+    pousada.style.display = 'none';
+    regiao.style.display = 'grid';
+    btnR.style.background = 'var(--verde)';
+    btnR.style.color = 'white';
+    btnP.style.background = 'transparent';
+    btnP.style.color = 'var(--verde)';
+  }
+}
+document.getElementById('btn-pousada').addEventListener('mouseover', function(){ if(this.style.background !== 'transparent') return; this.style.transform='translateY(-3px) scale(1.04)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'; });
+document.getElementById('btn-pousada').addEventListener('mouseout', function(){ this.style.transform=''; this.style.boxShadow=''; });
+document.getElementById('btn-regiao').addEventListener('mouseover', function(){ this.style.transform='translateY(-3px) scale(1.04)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'; });
+document.getElementById('btn-regiao').addEventListener('mouseout', function(){ this.style.transform=''; this.style.boxShadow=''; });
+</script>
+
 <!-- FOOTER / CONTACT -->
 <div class="footer-bg">
   <div class="footer-logo">Pousada São <em>Francisco</em></div>
   <p class="footer-sub">São João Batista do Glória · MG</p>
- 
+
   <div class="contact-items">
     <div class="contact-item">
       <strong>Endereço</strong>
@@ -849,18 +938,18 @@
       <strong>Telefone / WhatsApp</strong>
       +55 37 98829-0093
     </div>
- 
+
   </div>
- 
-  <div>
-    <a class="cta-btn" href="https://www.instagram.com/pousadasaofranciscogloria?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank">📸 Instagram</a>
-    <a class="cta-btn outline" href="https://maps.app.goo.gl/UFoKpAGpXkzYNfLM7" target="_blank" style="margin-top:12px;">📍 Localização</a>
-    <a class="cta-btn outline" href="https://www.google.com/travel/search?q=pousada%20sao%20francisco%20do%20gloria&g2lb=4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C73059275%2C73064764%2C121581523&hl=pt-BR&gl=uy&cs=1&ssta=1&ts=CAESCgoCCAMKAggDEAAaHBIaEhQKBwjqDxAFGAQSBwjqDxAFGAUYATICCAIqBwoFOgNVWVU&qs=CAEyFENnc0k5YjdobnMzcDBMV01BUkFCOAhCCRGpbIin3cTHk0IJEWBVoYnDKm2SQgkRGKXZjsK-IH1qHAoaDR-0IUUSEwjir8uJzvqTAxXENrkGHSsMBQo&ap=ugEHcmV2aWV3cw&ictx=111" target="_blank" style="margin-top:12px;">⭐ Avaliações</a>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
+    <a class="cta-btn" href="https://www.instagram.com/pousadasaofranciscogloria?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" style="margin:0; text-align:center; display:block;">📸 Instagram</a>
+    <a class="cta-btn outline" href="https://maps.app.goo.gl/UFoKpAGpXkzYNfLM7" target="_blank" style="margin:0; text-align:center; display:block;">📍 Localização</a>
+    <a class="cta-btn outline" href="https://www.google.com/travel/search?q=pousada%20sao%20francisco%20do%20gloria&g2lb=4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C73059275%2C73064764%2C121581523&hl=pt-BR&gl=uy&cs=1&ssta=1&ts=CAESCgoCCAMKAggDEAAaHBIaEhQKBwjqDxAFGAQSBwjqDxAFGAUYATICCAIqBwoFOgNVWVU&qs=CAEyFENnc0k5YjdobnMzcDBMV01BUkFCOAhCCRGpbIin3cTHk0IJEWBVoYnDKm2SQgkRGKXZjsK-IH1qHAoaDR-0IUUSEwjir8uJzvqTAxXENrkGHSsMBQo&ap=ugEHcmV2aWV3cw&ictx=111" target="_blank" style="margin:0; text-align:center; display:block;">⭐ Avaliações</a>
   </div>
- 
+
   <p class="footer-copy">© Pousada São Francisco · São João Batista do Glória · Todos os direitos reservados</p>
 </div>
- 
+
 <!-- UNIDADE DIAMANTE -->
 <div style="background: var(--verde-pale); padding: 64px 24px; text-align: center;">
   <p style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--verde-dark); margin-bottom: 8px; line-height: 1.6;">
@@ -870,7 +959,7 @@
     clique no logo abaixo
   </p>
   <div style="font-size: 24px; color: var(--verde); margin-bottom: 16px; animation: bounceDown 1.2s ease-in-out infinite;">↓</div>
-  <a href="saofrancisco.html" style="display: inline-block; transition: transform 0.3s, box-shadow 0.3s;">
+  <a href="https://renatodua-web.github.io/pousada-sao-francisco/diamante.html" target="_blank" style="display: inline-block; transition: transform 0.3s, box-shadow 0.3s;">
     <img src="https://raw.githubusercontent.com/renatodua-web/pousada-sao-francisco/main/fotos-pousada/logodiamante.jpg" alt="Pousada São Francisco Diamante" style="
       width: 130px;
       height: 130px;
@@ -888,7 +977,7 @@
     onmouseout="this.style.transform='perspective(600px) rotateX(8deg) rotateY(-5deg)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.15), 0 20px 40px rgba(0,0,0,0.2)';">
   </a>
 </div>
- 
+
 <script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -901,6 +990,6 @@
   }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
   reveals.forEach(el => observer.observe(el));
 </script>
- 
- 
+
+
 </body></html>
